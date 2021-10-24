@@ -1,0 +1,10 @@
+name: Vertretungsplan
+version: 0.1.0
+description: Zeigt den Vertretungsplan an
+type: plugin
+author:
+  name: Philipp Anné
+  email: softyde@annee.de
+license: MIT
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
