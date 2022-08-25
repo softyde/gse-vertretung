@@ -126,7 +126,7 @@ class VertretungTwigExtension extends GravExtension
 
 //        $dateKey = 20210909;
 	
-	$stmt = $db->prepare('SELECT * FROM vertretung WHERE datum = :datum');
+	$stmt = $db->prepare('SELECT vertretung.* FROM vertretung LEFT JOIN freigabe ON (vertretung.datum = freigabe.datum) WHERE vertretung.datum = :datum AND freigabe.freigabe = 1');
 	$stmt->bindValue(':datum', $dateKeys['current']['key'], SQLITE3_INTEGER);
 	$rows = $stmt->execute();
 	
